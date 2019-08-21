@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <title>Task 10 - Compulsory Task 3</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="task3.js"></script>
+        
+        <style type="text/css">
+            #calculated{
+                background-color: lightgoldenrodyellow;
+            }
+            
+            .calculator{
+                /* width: 400px !important; */
+                width: 100%;
+                max-width: 400px !important;
+            }
+            
+            .left{text-align: left;}
+            
+            .right{text-align: right;}
+            
+            ul {
+                list-style-type: none;
+                margin: 2px;
+                padding-left: 0px;
+                overflow: hidden;
+                text-align: center;
+                width: inherit;
+            }
+
+            li {
+                border: 2px;
+                float: left;
+                width: calc(25% - 6px) !important;
+                padding: 8px;
+                margin: 3px;
+                background: #eee;
+                border-radius: 3px;
+                box-sizing: border-box;
+            }
+            
+            li.function {
+                font-weight: bold;
+                background: #ccc;
+            }
+            
+            li.col-6 { 
+                width: calc(50% - 6px) !important;
+            }
+            
+            li:hover {
+                background-color: lightblue;
+            }
+             
+        </style>
+    </head>
+    
+    <body>
+        <!--
+        
+        Compulsory Task 3
+        Follow these steps:
+        ● Create a basic HTML file (called ‘task3.html’) with a few headings, paragraphs, forms
+        and images. Ensure that each item has an ID assigned to it. You will use this HTML
+        page to get input and display output for each task listed below. Write the
+        JavaScript needed in a file called ‘task3.js’.
+        ● Create a function which counts and displays the number of times a button has
+        been clicked.
+        ● Create a function to convert rands into dollars, euros and pounds.
+        ● Create a function which creates a drop-down menu with 25 option elements and
+        add it to the HTML page you have created. Each option element should display the
+        number of the option. Use a loop.
+        ● Create a calculator:
+        ○ It should have the layout similar to the calculator on your computer
+        ○ Use CSS to help you style the layout
+        ○ Use JavaScript functions to implement its operation
+
+        -->
+        
+        
+        <div class="container">
+            <button value="Count Clicks!" onclick="countClicks();">Count Clicks!</button>
+            <div id="clickCount">You have not clicked yet.</div>
+        </div>
+        <br />
+        <br />
+        
+        <div class="container">
+            <input type="text" id="rands" placeholder="Rands" /><br />
+            <button onclick="convertRands(document.getElementById('rands').value);">Convert</button><br />
+            <textarea id="result" rows="5" cols="25">You have not yet converted a value.</textarea>
+        </div>
+        <br />
+        <br />
+        
+        <div class="container">
+            <button onclick="replaceIt();">Replace It</button><br />
+            <div id="replace">This content will be replaced when you click the button above.</div>
+        </div>
+        <br />
+        <br />
+
+        
+        <div class="calculator container">
+            <div class="calculator row" style="align-content: center;">
+                <div id="calculated" class="calculator col-12 right">0</div>
+                <div class="calculator">
+                    <ul>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">AC</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">+/-</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">%</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">/</li>
+                    </ul>
+                    <ul>
+                        <li onclick="buttonPush(this.innerHTML);">7</li>
+                        <li onclick="buttonPush(this.innerHTML);">8</li>
+                        <li onclick="buttonPush(this.innerHTML);">9</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">*</li>
+                    </ul>
+                    <ul>
+                        <li onclick="buttonPush(this.innerHTML);">4</li>
+                        <li onclick="buttonPush(this.innerHTML);">5</li>
+                        <li onclick="buttonPush(this.innerHTML);">6</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">-</li>
+                    </ul>
+                    <ul>
+                        <li onclick="buttonPush(this.innerHTML);">1</li>
+                        <li onclick="buttonPush(this.innerHTML);">2</li>
+                        <li onclick="buttonPush(this.innerHTML);">3</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">+</li>
+                    </ul><ul>
+                        <li class="col-6" onclick="buttonPush(this.innerHTML);">0</li>
+                        <li onclick="buttonPush(this.innerHTML);">.</li>
+                        <li class="function" onclick="buttonPush(this.innerHTML);">=</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+    </body>
+
+</html>
